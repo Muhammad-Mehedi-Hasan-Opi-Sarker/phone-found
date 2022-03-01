@@ -1,8 +1,10 @@
 const loadData = () => {
+    document.getElementById('spinner').style.display = 'block';
     document.getElementById('card').innerHTML = ""
+    document.getElementById('details').innerHTML = ""
     const input = document.getElementById('search-feild');
     const erorr = document.getElementById('error');
-    const noshow = document.getElementById('noShow');
+
     const searchText = input.value;
     input.value = "";
     if (searchText == "") {
@@ -12,10 +14,26 @@ const loadData = () => {
     else {
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
             .then(response => response.json())
-            .then(data => fontShow(data.data))
+            .then(data => {
+                if (data.status == false) {
+                    document.getElementById('spinner').style.display = 'none';
+                    // nofound.innerText = "No found result"
+                    erorr.innerText = "No found result"
+                }
+                else {
+                    fontShow(data.data);
+                    document.getElementById('spinner').style.display = "none";
+                }
+
+            })
         erorr.innerText = ""
+
+
     }
 }
+// kjjjj
+// fontShow(data.data)
+
 const fontShow = phones => {
     // console.log(phones)
 

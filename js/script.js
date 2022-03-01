@@ -1,4 +1,5 @@
 const loadData = () => {
+    document.getElementById('card').innerHTML = ""
     const input = document.getElementById('search-feild');
     const erorr = document.getElementById('error');
     const searchText = input.value;
@@ -11,6 +12,7 @@ const loadData = () => {
         fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`)
             .then(response => response.json())
             .then(data => fontShow(data.data))
+        erorr.innerText = ""
     }
 }
 const fontShow = phones => {
@@ -20,7 +22,6 @@ const fontShow = phones => {
         // console.log(phone)
         const card = document.getElementById('card');
         const div = document.createElement('div');
-        // div.classList.add('col-lg-4 col-sm-12')
         div.innerHTML = `
         <div class="card" style="width: 18rem;">
                 <img src="${phone.image}" class="card-img-top" alt="...">

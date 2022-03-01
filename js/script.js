@@ -15,13 +15,14 @@ const loadData = () => {
 }
 const fontShow = phones => {
     // console.log(phones)
-    const card = document.getElementById('card');
+
     for (const phone of phones) {
         // console.log(phone)
+        const card = document.getElementById('card');
         const div = document.createElement('div');
         // div.classList.add('col-lg-4 col-sm-12')
         div.innerHTML = `
-        <div class="card col-4" style="width: 18rem;">
+        <div class="card" style="width: 18rem;">
                 <img src="${phone.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${phone.brand}</h5>

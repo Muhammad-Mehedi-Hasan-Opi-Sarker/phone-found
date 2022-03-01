@@ -12,6 +12,22 @@
 </head>
 
 <body>
+    <div class="bg-warning">
+        <div class="container">
+            <h2>Phone Finder</h2>
+        </div>
+    </div>
+    <!-- search part -->
+    <div class="container">
+        <div class="input-group mb-3 w-50 align-top mx-auto">
+            <input id="search-feild" class="form-control me-2" type="search" placeholder="Search Phone"
+                aria-label="Search">
+            <button onclick="loadData()" id="button" class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+        <div class="text-center">
+            <h2 id="error"></h2>
+        </div>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -1,0 +1,21 @@
+h2{
+    color: white;
+}
+#error{
+    background-color: red;
+    color: antiquewhite;
+}
+
+/* responsive */
+
+@media only screen and (max-width:700px) {
+    #search-feild{
+        width: max-content;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+    .button{
+        text-align: center;
+        padding-top: 10px;
+    }
+}
